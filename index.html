@@ -11,7 +11,7 @@ html { scroll-behavior: smooth; }
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    background: #0f172a;
+    background: linear-gradient(135deg, #0f172a, #020617);
     color: #f1f5f9;
 }
 
@@ -19,15 +19,15 @@ body {
 nav {
     position: sticky;
     top: 0;
-    background: #1e293b;
+    background: rgba(30,41,59,0.7);
+    backdrop-filter: blur(10px);
     padding: 15px;
     text-align: center;
-    z-index: 1000;
 }
 
 nav a {
-    color: #f1f5f9;
     margin: 0 15px;
+    color: #f1f5f9;
     text-decoration: none;
     font-weight: bold;
 }
@@ -37,29 +37,35 @@ nav a:hover { color: #38bdf8; }
 /* Header */
 header {
     text-align: center;
-    padding: 80px 20px;
+    padding: 100px 20px;
+}
+
+.typing {
+    font-size: 20px;
+    color: #38bdf8;
 }
 
 /* Sections */
 section {
-    padding: 50px 20px;
+    padding: 60px 20px;
     max-width: 1100px;
     margin: auto;
 }
 
 h2 { color: #38bdf8; }
-h3 { margin-top: 30px; }
 
 /* Cards */
 .card {
-    background: #1e293b;
+    background: rgba(30,41,59,0.6);
+    backdrop-filter: blur(12px);
     padding: 20px;
-    margin: 15px 0;
-    border-radius: 12px;
+    border-radius: 15px;
     transition: 0.3s;
 }
 
-.card:hover { transform: translateY(-5px); }
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+}
 
 /* Grid */
 .grid {
@@ -72,10 +78,29 @@ h3 { margin-top: 30px; }
 img {
     width: 100%;
     border-radius: 10px;
-    margin-top: 10px;
+    cursor: pointer;
 }
 
-/* Buttons */
+/* Zoom Modal */
+#modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+}
+
+#modal img {
+    margin: auto;
+    display: block;
+    width: 80%;
+}
+
+/* Button */
 .btn {
     display: inline-block;
     margin-top: 10px;
@@ -86,163 +111,138 @@ img {
     text-decoration: none;
 }
 
-/* Footer */
+/* Animation */
+.fade {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 1s;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 footer {
     text-align: center;
     padding: 20px;
-    background: #1e293b;
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
 <nav>
 <a href="#home">Home</a>
-<a href="#education">Education</a>
 <a href="#certificates">Certificates</a>
 <a href="#dashboards">Dashboards</a>
-<a href="#ml">ML Projects</a>
+<a href="#ml">Projects</a>
 <a href="#github">GitHub</a>
 </nav>
 
-<!-- HOME -->
 <header id="home">
 <h1>Talha Talib</h1>
-<p>Data Analyst | Power BI | SQL | Machine Learning</p>
-<p>📞 03408270618 | 📧 talhatalib635@gmail.com</p>
+<p class="typing" id="typing"></p>
 </header>
 
-<!-- EDUCATION -->
-<section id="education">
-<h2>Education</h2>
-<div class="card">
-<p><b>BS Data Science</b> – Punjab University Lahore (2024–2028)</p>
-<p><b>FSC Pre-Engineering</b> – Punjab College Bhakkar (91%)</p>
-</div>
-</section>
-
 <!-- CERTIFICATES -->
-<section id="certificates">
+<section id="certificates" class="fade">
 <h2>Certificates</h2>
+
+<div class="grid">
 
 <div class="card">
 <h3>HackerRank SQL</h3>
-<iframe src="https://www.hackerrank.com/certificates/iframe/46ff28b9be1b" width="100%" height="300"></iframe>
+<iframe src="https://www.hackerrank.com/certificates/iframe/46ff28b9be1b" width="100%" height="200"></iframe>
 <a class="btn" href="https://www.hackerrank.com/certificates/46ff28b9be1b" target="_blank">Verify</a>
 </div>
 
 <div class="card">
-<h3>Oracle Data Platform</h3>
+<img src="oracle.png" onclick="zoom(this)">
+<h3>Oracle</h3>
 <a class="btn" href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=FF0280AD492F089A4F6A331CF4FA1694383E718287D19967434154C677A3EE6C" target="_blank">Verify</a>
 </div>
 
 <div class="card">
-<h3>DigiSkills Data Analyst</h3>
-<p>Certificate ID: <b>2DX2GAJMK</b></p>
+<img src="dgskills.png" onclick="zoom(this)">
+<h3>DigiSkills</h3>
 <a class="btn" href="https://digiskills.pk/verify" target="_blank">Verify</a>
 </div>
 
 <div class="card">
-<h3>Tata Data Visualization (Forage)</h3>
+<img src="tata.png" onclick="zoom(this)">
+<h3>Tata</h3>
 <a class="btn" href="https://www.theforage.com/completion-certificates/ifobHAoMjQs9s6bKS/MyXvBcppsW2FkNYCX_ifobHAoMjQs9s6bKS_69a534f5b2851a2068f1002a_1772444261844_completion_certificate.pdf" target="_blank">View</a>
 </div>
 
+</div>
 </section>
 
 <!-- DASHBOARDS -->
-<section id="dashboards">
-<h2>Power BI Dashboards</h2>
-
-<h3>Single Page Dashboards</h3>
+<section id="dashboards" class="fade">
+<h2>Dashboards</h2>
 <div class="grid">
+<img src="dashboard1.png" onclick="zoom(this)">
+<img src="dashboard2.png" onclick="zoom(this)">
+<img src="dashboard3_page1.png" onclick="zoom(this)">
+<img src="dashboard3_page2.png" onclick="zoom(this)">
+</div>
+</section>
+
+<!-- ML -->
+<section id="ml" class="fade">
+<h2>ML Projects</h2>
 
 <div class="card">
-<img src="dashboard1.png">
-<h4>Sales Dashboard</h4>
-<p>Revenue trends, KPIs, and performance insights.</p>
-</div>
-
-<div class="card">
-<img src="dashboard2.png">
-<h4>Performance Dashboard</h4>
-<p>Business growth and performance tracking.</p>
-</div>
-
-</div>
-
-<h3>Multi-Page Dashboards</h3>
-<div class="grid">
-
-<div class="card">
-<img src="dashboard3_page1.png">
-<img src="dashboard3_page2.png">
-<h4>Business Insights Dashboard</h4>
-<p>Multi-page analysis with KPIs and segmentation.</p>
-</div>
-
-<div class="card">
-<img src="dashboard4_page1.png">
-<img src="dashboard4_page2.png">
-<h4>Advanced Analytics Dashboard</h4>
-<p>Detailed insights for decision-making.</p>
-</div>
-
+Credit Risk Model (~80%)
+<a class="btn" href="https://github.com/Ch4847/data-science-portfolio" target="_blank">View</a>
 </div>
 
 </section>
 
-<!-- ML PROJECTS -->
-<section id="ml">
-<h2>Machine Learning Projects</h2>
-
-<div class="card">
-<b>Credit Risk Prediction</b>
-<p>~80% accuracy model</p>
-<a class="btn" href="https://github.com/Ch4847/data-science-portfolio" target="_blank">View Project</a>
-</div>
-
-<div class="card">
-<b>Customer Churn Prediction</b>
-<p>Customer retention model</p>
-<a class="btn" href="https://github.com/Ch4847/data-science-portfolio" target="_blank">View Project</a>
-</div>
-
-<div class="card">
-<b>Insurance Claim Prediction</b>
-<p>Regression model</p>
-<a class="btn" href="https://github.com/Ch4847/data-science-portfolio" target="_blank">View Project</a>
-</div>
-
-<div class="card">
-<b>Loan Prediction</b>
-<p>Approval prediction model</p>
-<a class="btn" href="https://github.com/Ch4847/data-science-portfolio" target="_blank">View Project</a>
-</div>
-
-<div class="card">
-<b>Exploratory Data Analysis</b>
-<p>Data insights & visualization</p>
-<a class="btn" href="https://github.com/Ch4847/data-science-portfolio" target="_blank">View Project</a>
-</div>
-
-</section>
-
-<!-- GITHUB -->
-<section id="github">
-<h2>GitHub Repository</h2>
-<div class="card">
-<p>All projects and models are available on GitHub.</p>
+<!-- GitHub -->
+<section id="github" class="fade">
+<h2>GitHub</h2>
 <a class="btn" href="https://github.com/Ch4847/data-science-portfolio" target="_blank">
-View Full Portfolio
+View Portfolio
 </a>
-</div>
 </section>
 
-<footer>
-<p>© Talha Talib</p>
-</footer>
+<footer>© Talha Talib</footer>
+
+<!-- IMAGE ZOOM -->
+<div id="modal" onclick="this.style.display='none'">
+<img id="modal-img">
+</div>
+
+<script>
+// Typing effect
+let text = "Data Analyst | Power BI | SQL | Machine Learning";
+let i = 0;
+function type() {
+    if (i < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(type, 50);
+    }
+}
+type();
+
+// Fade in
+window.addEventListener("scroll", () => {
+    document.querySelectorAll(".fade").forEach(el => {
+        if (el.getBoundingClientRect().top < window.innerHeight - 50) {
+            el.classList.add("show");
+        }
+    });
+});
+
+// Image zoom
+function zoom(img) {
+    document.getElementById("modal").style.display = "block";
+    document.getElementById("modal-img").src = img.src;
+}
+</script>
 
 </body>
 </html>
