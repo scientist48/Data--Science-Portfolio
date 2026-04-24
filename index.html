@@ -40,6 +40,7 @@ header {
     padding: 80px 20px;
 }
 
+/* Sections */
 section {
     padding: 50px 20px;
     max-width: 1100px;
@@ -47,6 +48,7 @@ section {
 }
 
 h2 { color: #38bdf8; }
+h3 { margin-top: 30px; }
 
 /* Cards */
 .card {
@@ -66,8 +68,14 @@ h2 { color: #38bdf8; }
     gap: 20px;
 }
 
-img { width: 100%; border-radius: 10px; }
+/* Images */
+img {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+}
 
+/* Buttons */
 .btn {
     display: inline-block;
     margin-top: 10px;
@@ -78,6 +86,7 @@ img { width: 100%; border-radius: 10px; }
     text-decoration: none;
 }
 
+/* Footer */
 footer {
     text-align: center;
     padding: 20px;
@@ -131,12 +140,12 @@ footer {
 
 <div class="card">
 <h3>DigiSkills Data Analyst</h3>
-<p>ID: 2DX2GAJMK</p>
+<p>Certificate ID: <b>2DX2GAJMK</b></p>
 <a class="btn" href="https://digiskills.pk/verify" target="_blank">Verify</a>
 </div>
 
 <div class="card">
-<h3>Tata (Forage)</h3>
+<h3>Tata Data Visualization (Forage)</h3>
 <a class="btn" href="https://www.theforage.com/completion-certificates/ifobHAoMjQs9s6bKS/MyXvBcppsW2FkNYCX_ifobHAoMjQs9s6bKS_69a534f5b2851a2068f1002a_1772444261844_completion_certificate.pdf" target="_blank">View</a>
 </div>
 
@@ -145,14 +154,43 @@ footer {
 <!-- DASHBOARDS -->
 <section id="dashboards">
 <h2>Power BI Dashboards</h2>
+
+<h3>Single Page Dashboards</h3>
 <div class="grid">
 
-<div class="card"><img src="dashboard1.png"><p>Sales Dashboard</p></div>
-<div class="card"><img src="dashboard2.png"><p>Performance Dashboard</p></div>
-<div class="card"><img src="dashboard3.png"><p>Business Insights</p></div>
-<div class="card"><img src="dashboard4.png"><p>Advanced Analytics</p></div>
+<div class="card">
+<img src="dashboard1.png">
+<h4>Sales Dashboard</h4>
+<p>Revenue trends, KPIs, and performance insights.</p>
+</div>
+
+<div class="card">
+<img src="dashboard2.png">
+<h4>Performance Dashboard</h4>
+<p>Business growth and performance tracking.</p>
+</div>
 
 </div>
+
+<h3>Multi-Page Dashboards</h3>
+<div class="grid">
+
+<div class="card">
+<img src="dashboard3_page1.png">
+<img src="dashboard3_page2.png">
+<h4>Business Insights Dashboard</h4>
+<p>Multi-page analysis with KPIs and segmentation.</p>
+</div>
+
+<div class="card">
+<img src="dashboard4_page1.png">
+<img src="dashboard4_page2.png">
+<h4>Advanced Analytics Dashboard</h4>
+<p>Detailed insights for decision-making.</p>
+</div>
+
+</div>
+
 </section>
 
 <!-- ML PROJECTS -->
