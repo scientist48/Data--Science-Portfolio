@@ -6,126 +6,86 @@
 <title>Talha Talib | Data Portfolio</title>
 
 <style>
-html { scroll-behavior: smooth; }
-
 body {
     margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #0f172a, #020617);
+    font-family: Arial, sans-serif;
+    background: #0f172a;
     color: #f1f5f9;
 }
 
-/* Navbar */
 nav {
-    position: sticky;
-    top: 0;
-    background: rgba(30,41,59,0.7);
-    backdrop-filter: blur(10px);
+    background: #1e293b;
     padding: 15px;
     text-align: center;
 }
 
 nav a {
+    color: white;
     margin: 0 15px;
-    color: #f1f5f9;
     text-decoration: none;
     font-weight: bold;
 }
 
 nav a:hover { color: #38bdf8; }
 
-/* Header */
 header {
     text-align: center;
-    padding: 100px 20px;
+    padding: 50px;
 }
 
-.typing {
-    font-size: 20px;
-    color: #38bdf8;
+header img {
+    width: 120px;
+    border-radius: 50%;
 }
 
-/* Sections */
 section {
-    padding: 60px 20px;
-    max-width: 1100px;
+    padding: 40px;
+    max-width: 1000px;
     margin: auto;
 }
 
 h2 { color: #38bdf8; }
 
-/* Cards */
 .card {
-    background: rgba(30,41,59,0.6);
-    backdrop-filter: blur(12px);
+    background: #1e293b;
     padding: 20px;
-    border-radius: 15px;
-    transition: 0.3s;
+    margin: 20px 0;
+    border-radius: 10px;
 }
 
-.card:hover {
-    transform: translateY(-8px) scale(1.02);
-}
-
-/* Grid */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-/* Images */
 img {
     width: 100%;
-    border-radius: 10px;
-    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 8px;
 }
 
-/* Zoom Modal */
-#modal {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    padding-top: 50px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.9);
+.skill { margin: 10px 0; }
+
+.bar {
+    background: #334155;
+    border-radius: 5px;
 }
 
-#modal img {
-    margin: auto;
-    display: block;
-    width: 80%;
+.fill {
+    background: #38bdf8;
+    padding: 5px;
+    border-radius: 5px;
 }
 
-/* Button */
 .btn {
     display: inline-block;
     margin-top: 10px;
     padding: 8px 15px;
     background: #38bdf8;
     color: black;
-    border-radius: 6px;
+    border-radius: 5px;
     text-decoration: none;
-}
-
-/* Animation */
-.fade {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: 1s;
-}
-
-.show {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 footer {
     text-align: center;
     padding: 20px;
+    background: #1e293b;
 }
 </style>
 </head>
@@ -134,6 +94,10 @@ footer {
 
 <nav>
 <a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#experience">Experience</a>
+<a href="#education">Education</a>
 <a href="#certificates">Certificates</a>
 <a href="#dashboards">Dashboards</a>
 <a href="#ml">Projects</a>
@@ -141,108 +105,145 @@ footer {
 </nav>
 
 <header id="home">
+<img src="profile.png">
 <h1>Talha Talib</h1>
-<p class="typing" id="typing"></p>
+<p>Data Analyst | Power BI | SQL | Machine Learning</p>
+<p>📞 03408270618 | 📧 talhatalib635@gmail.com</p>
 </header>
 
-<!-- CERTIFICATES -->
-<section id="certificates" class="fade">
-<h2>Certificates</h2>
+<section id="about">
+<h2>About Me</h2>
+<div class="card">
+<p>
+I am a Data Science student at Punjab University with hands-on experience in data analysis,
+machine learning, and data annotation. I focus on solving real-world problems using data.
+</p>
+</div>
+</section>
 
-<div class="grid">
+<section id="skills">
+<h2>Skills</h2>
+<div class="card">
+
+<div class="skill">SQL
+<div class="bar"><div class="fill" style="width:85%">85%</div></div>
+</div>
+
+<div class="skill">Power BI
+<div class="bar"><div class="fill" style="width:80%">80%</div></div>
+</div>
+
+<div class="skill">Python
+<div class="bar"><div class="fill" style="width:75%">75%</div></div>
+</div>
+
+<div class="skill">Machine Learning
+<div class="bar"><div class="fill" style="width:78%">78%</div></div>
+</div>
+
+<div class="skill">Data Analysis
+<div class="bar"><div class="fill" style="width:82%">82%</div></div>
+</div>
+
+</div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+<h2>Experience</h2>
+
+<div class="card">
+<h3>Data Annotator</h3>
+<p><b>Duration:</b> 6 Months</p>
+<ul>
+<li>Labeled and annotated datasets for machine learning models.</li>
+<li>Worked on image and text annotation tasks.</li>
+<li>Maintained high accuracy and consistency in data labeling.</li>
+<li>Used tools like Labelbox / CVAT.</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Data Analysis</h3>
+<p><b>Duration:</b> 4 Months</p>
+<ul>
+<li>Performed data cleaning and preprocessing.</li>
+<li>Created dashboards using Power BI.</li>
+<li>Extracted insights from datasets using SQL and Python.</li>
+<li>Worked on real-world datasets for analysis projects.</li>
+</ul>
+</div>
+
+</section>
+
+<section id="education">
+<h2>Education</h2>
+<div class="card">
+<p><b>BS Data Science</b> – Punjab University Lahore (2024–2028)</p>
+<p><b>FSC Pre-Engineering</b> – Punjab College Bhakkar (91%)</p>
+</div>
+</section>
+
+<section id="certificates">
+<h2>Certificates</h2>
 
 <div class="card">
 <h3>HackerRank SQL</h3>
-<iframe src="https://www.hackerrank.com/certificates/iframe/46ff28b9be1b" width="100%" height="200"></iframe>
+<img src="hackerrank.png">
 <a class="btn" href="https://www.hackerrank.com/certificates/46ff28b9be1b" target="_blank">Verify</a>
 </div>
 
 <div class="card">
-<img src="oracle.png" onclick="zoom(this)">
 <h3>Oracle</h3>
+<img src="oracle.png">
 <a class="btn" href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=FF0280AD492F089A4F6A331CF4FA1694383E718287D19967434154C677A3EE6C" target="_blank">Verify</a>
 </div>
 
 <div class="card">
-<img src="dgskills.png" onclick="zoom(this)">
 <h3>DigiSkills</h3>
+<img src="dgskills.png">
 <a class="btn" href="https://digiskills.pk/verify" target="_blank">Verify</a>
 </div>
 
 <div class="card">
-<img src="tata.png" onclick="zoom(this)">
 <h3>Tata</h3>
+<img src="tata.png">
 <a class="btn" href="https://www.theforage.com/completion-certificates/ifobHAoMjQs9s6bKS/MyXvBcppsW2FkNYCX_ifobHAoMjQs9s6bKS_69a534f5b2851a2068f1002a_1772444261844_completion_certificate.pdf" target="_blank">View</a>
 </div>
 
-</div>
 </section>
 
-<!-- DASHBOARDS -->
-<section id="dashboards" class="fade">
+<section id="dashboards">
 <h2>Dashboards</h2>
-<div class="grid">
-<img src="dashboard1.png" onclick="zoom(this)">
-<img src="dashboard2.png" onclick="zoom(this)">
-<img src="dashboard3_page1.png" onclick="zoom(this)">
-<img src="dashboard3_page2.png" onclick="zoom(this)">
-</div>
+
+<div class="card"><img src="dashboard1.png"></div>
+<div class="card"><img src="dashboard2.png"></div>
+<div class="card"><img src="dashboard3_page1.png"><img src="dashboard3_page2.png"></div>
+<div class="card"><img src="dashboard4_page1.png"><img src="dashboard4_page2.png"></div>
+
 </section>
 
-<!-- ML -->
-<section id="ml" class="fade">
-<h2>ML Projects</h2>
+<section id="ml">
+<h2>Machine Learning Projects</h2>
 
 <div class="card">
-Credit Risk Model (~80%)
-<a class="btn" href="https://github.com/Ch4847/data-science-portfolio" target="_blank">View</a>
+<h3>Credit Risk</h3>
+<a class="btn" href="https://github.com/Ch4847/data-science-portfolio">View</a>
+</div>
+
+<div class="card">
+<h3>Churn Prediction</h3>
+<a class="btn" href="https://github.com/Ch4847/data-science-portfolio">View</a>
 </div>
 
 </section>
 
-<!-- GitHub -->
-<section id="github" class="fade">
+<section id="github">
 <h2>GitHub</h2>
-<a class="btn" href="https://github.com/Ch4847/data-science-portfolio" target="_blank">
-View Portfolio
-</a>
+<a class="btn" href="https://github.com/Ch4847/data-science-portfolio">View Portfolio</a>
 </section>
 
 <footer>© Talha Talib</footer>
-
-<!-- IMAGE ZOOM -->
-<div id="modal" onclick="this.style.display='none'">
-<img id="modal-img">
-</div>
-
-<script>
-// Typing effect
-let text = "Data Analyst | Power BI | SQL | Machine Learning";
-let i = 0;
-function type() {
-    if (i < text.length) {
-        document.getElementById("typing").innerHTML += text.charAt(i);
-        i++;
-        setTimeout(type, 50);
-    }
-}
-type();
-
-// Fade in
-window.addEventListener("scroll", () => {
-    document.querySelectorAll(".fade").forEach(el => {
-        if (el.getBoundingClientRect().top < window.innerHeight - 50) {
-            el.classList.add("show");
-        }
-    });
-});
-
-// Image zoom
-function zoom(img) {
-    document.getElementById("modal").style.display = "block";
-    document.getElementById("modal-img").src = img.src;
-}
-</script>
 
 </body>
 </html>
